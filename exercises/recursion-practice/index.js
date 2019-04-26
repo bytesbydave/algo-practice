@@ -71,9 +71,12 @@ function sumDigits(num) {
 // Given a non-negative int n, return the count of the occurrences of 7 as a digit, so for example 717 yields 2. (no loops). Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
 function count7(num) {
-  if (num % 10 === num && num === 7) {
-    return 1;
-  } else if (num % 10 === num) {
+  // if (num % 10 === num && num === 7) {
+  //   return 1;
+  // } else if (num % 10 === num) {
+  //   return 0;
+  // }
+  if (num < 1) {
     return 0;
   }
   return num % 10 === 7
@@ -91,9 +94,12 @@ function count7(num) {
 // Given a non-negative int n, compute recursively (no loops) the count of the occurrences of 8 as a digit, except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4. Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
 function count8(num) {
-  if (num === 8) {
-    return 1;
-  } else if (num % 10 === num) {
+  // if (num === 8) {
+  //   return 1;
+  // } else if (num % 10 === num) {
+  //   return 0;
+  // }
+  if (num < 1) {
     return 0;
   }
   if (num % 100 === 88) {
@@ -121,9 +127,7 @@ function powerN(base, power) {
 // Given a string, compute recursively (no loops) the number of lowercase 'x' chars in the string.
 
 function countX(str) {
-  if (str === 'x') {
-    return 1;
-  } else if (str.length < 2) {
+  if (str.length < 1) {
     return 0;
   }
   if (str.charAt(0) === 'x') {
@@ -138,9 +142,7 @@ function countX(str) {
 // Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
 
 function countHi(str) {
-  if (str === 'hi') {
-    return 1;
-  } else if (str.length < 3) {
+  if (str.length < 2) {
     return 0;
   }
   if (str.substring(0, 2) === 'hi') {
@@ -155,10 +157,8 @@ function countHi(str) {
 // Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
 
 function changeXY(str) {
-  if (str === 'x') {
-    return 'y';
-  } else if (str.length < 2) {
-    return str;
+  if (str === '') {
+    return '';
   }
   if (str.charAt(0) === 'x') {
     return 'y' + changeXY(str.substr(1));
@@ -172,9 +172,7 @@ function changeXY(str) {
 // Given a string, compute recursively (no loops) a new string where all appearances of "pi" have been replaced by "3.14".
 
 function changePi(str) {
-  if (str === 'pi') {
-    return '3.14';
-  } else if (str.length < 2) {
+  if (str.length < 2) {
     return str;
   }
   if (str.substr(0, 2) === 'pi') {
@@ -186,12 +184,327 @@ function changePi(str) {
 
 // ---------------------------------------------------
 
-
 // Given a string, compute recursively a new string where all the 'x' chars have been removed.
 
+// function noX(str) {
+//   if (str === 'x') {
+//     return '';
+//   } else if (str.length < 2) {
+//     return str;
+//   }
+//   if (str.charAt(0) === 'x') {
+//     return '' + noX(str.substr(1));
+//   } else {
+//     return str.charAt(0) + noX(str.substr(1));
+//   }
+// }
 function noX(str) {
-
+  if (str === '') {
+    return '';
+  }
+  if (str.charAt(0) === 'x') {
+    return '' + noX(str.substr(1));
+  } else {
+    return str.charAt(0) + noX(str.substr(1));
+  }
 }
+
+// ---------------------------------------------------
+
+// Given an array of ints, compute recursively if the array contains a 6. We'll use the convention of considering only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to move down the array. The initial call will pass in index as 0.
+
+function array6(nums, index) {
+  if (nums.length < 1) {
+    return false;
+  }
+  const firstNum = nums.shift();
+  if (firstNum === 6) {
+    return true;
+  } else {
+    return array6(nums, 0); // nums.shift(0) mutable change to nums array
+  }
+}
+
+// ---------------------------------------------------
+
+// Given an array of ints, compute recursively the number of times that the value 11 appears in the array. We'll use the convention of considering only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to move down the array. The initial call will pass in index as 0.
+
+function array11(nums, index) {
+  if (nums.length < 1) {
+    return 0;
+  }
+  const firstNum = nums.shift();
+  if (firstNum === 11) {
+    return 1 + array11(nums);
+  } else {
+    return 0 + array11(nums);
+  }
+}
+
+// ---------------------------------------------------
+
+// Given an array of ints, compute recursively if the array contains somewhere a value followed in the array by that value times 10. We'll use the convention of considering only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to move down the array. The initial call will pass in index as 0.
+
+function array220(nums, index) {
+  if (nums.length < 2) {
+    return false;
+  }
+  const num = nums.shift();
+  if (num * 10 === nums[0]) {
+    return true;
+  } else {
+    return array220(nums, 0);
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, compute recursively a new string where all the adjacent chars are now separated by a "*".
+
+function allStar(str) {
+  if (str.length < 2) {
+    return str;
+  }
+  return str.charAt(0) + '*' + allStar(str.substr(1));
+}
+
+// ---------------------------------------------------
+
+// Given a string, compute recursively a new string where identical chars that are adjacent in the original string are separated from each other by a "*".
+
+function pairStar(str) {
+  if (str.length < 2) {
+    return str;
+  }
+  if (str.charAt(0) === str.charAt(1)) {
+    return str.charAt(0) + '*' + pairStar(str.substr(1));
+  } else {
+    return str.charAt(0) + pairStar(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, compute recursively a new string where all the lowercase 'x' chars have been moved to the end of the string.
+
+function endX(str) {
+  if (str.length < 1) {
+    return '';
+  }
+  if (str.charAt(0) === 'x') {
+    return endX(str.substr(1)) + str.charAt(0);
+  } else {
+    return str.charAt(0) + endX(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// We'll say that a "pair" in a string is two instances of a char separated by a char. So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x. Recursively compute the number of pairs in the given string.
+
+function countPairs(str) {
+  if (str.length < 1) {
+    return 0;
+  }
+  if (str.charAt(0) === str.charAt(2)) {
+    return 1 + countPairs(str.substr(1));
+  } else {
+    return 0 + countPairs(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
+
+function countAbc(str) {
+  if (str.length < 3) {
+    return 0;
+  }
+  if (str.substr(0, 3) === 'abc' || str.substr(0, 3) === 'aba') {
+    return 1 + countAbc(str.substr(1));
+  } else {
+    return 0 + countAbc(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, compute recursively (no loops) the number of "11" substrings in the string. The "11" substrings should not overlap.
+
+function count11(str) {
+  if (str.length < 2) {
+    return 0;
+  }
+  if (str.substr(0, 2) === '11') {
+    return 1 + count11(str.substr(2));
+  } else {
+    return 0 + count11(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".
+
+function stringClean(str) {
+  if (str.length < 1) {
+    return '';
+  }
+  if (str.charAt(0) === str.charAt(1)) {
+    return stringClean(str.substr(1));
+  } else {
+    return str.charAt(0) + stringClean(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, compute recursively the number of times lowercase "hi" appears in the string, however do not count "hi" that have an 'x' immedately before them.
+
+function countHi2(str) {
+  if (str.length < 2) {
+    return 0;
+  }
+  if (str.charAt(0) === 'x' && str.substr(1, 2) === 'hi') {
+    return 0 + countHi2(str.substr(3));
+  } else if (str.substr(0, 2) === 'hi') {
+    return 1 + countHi2(str.substr(2));
+  } else {
+    return 0 + countHi2(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string that contains a single pair of parenthesis, compute recursively a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".
+
+function parenBit(str) {
+  if (str.charAt(0) === '(' && str.charAt(str.length - 1) === ')') {
+    return str;
+  }
+  if (str.charAt(0) === '(') {
+    return parenBit(str.substr(0, str.length - 1));
+  } else {
+    return parenBit(str.substr(1));
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string, return true if it is a nesting of zero or more pairs of parenthesis, like "(())" or "((()))". Suggestion: check the first and last chars, and then recur on what's inside them.
+
+function nestParen(str) {
+  if (str.length < 1) {
+    return true;
+  }
+  if (str.charAt(0) === '(' && str.charAt(str.length - 1) === ')') {
+    return nestParen(str.substr(1, str.length - 2));
+  } else {
+    return false;
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string and a non-empty substring sub, compute recursively the number of times that sub appears in the string, without the sub strings overlapping.
+
+function strCount(str, sub) {
+  if (str.length < sub.length) {
+    return 0;
+  }
+  if (str.substr(0, sub.length) === sub) {
+    return 1 + strCount(str.substr(sub.length), sub);
+  } else {
+    return 0 + strCount(str.substr(1), sub);
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string and a non-empty substring sub, compute recursively if at least n copies of sub appear in the string somewhere, possibly with overlapping. N will be non-negative.
+
+function strCopies(str, sub, num) {
+  if (str.length < 1) {
+    return 0 === num;
+  }
+  if (str.substr(0, sub.length) === sub) {
+    return strCopies(str.substr(1), sub, num - 1);
+  } else {
+    return strCopies(str.substr(1), sub, num);
+  }
+}
+
+// ---------------------------------------------------
+
+// Given a string and a non-empty substring sub, compute recursively the largest substring which starts and ends with sub and return its length.
+
+function strDist(str, sub) {
+  if (str.length < 1) {
+    return 0;
+  }
+  if (
+    str.substr(0, sub.length) === sub &&
+    str.substr(str.length - sub.length, str.length) === sub
+  ) {
+    return str.length;
+  }
+  if (str.substr(0, sub.length) === sub) {
+    return strDist(str.substr(0, str.length - 1), sub);
+  } else {
+    return strDist(str.substr(1), sub);
+  }
+}
+
+// ---------------------------------------------------
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target? This is a classic backtracking recursion problem. Once you understand the recursive backtracking strategy in this problem, you can use the same pattern for many problems to search a space of choices. Rather than looking at the whole array, our convention is to consider the part of the array starting at index start and continuing to the end of the array. The caller can specify the whole array simply by passing start as 0. No loops are needed -- the recursive calls progress down the array.
+
+function groupSum(start, nums, target) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to choose a group of some of the ints, beginning at the start index, such that the group sums to the given target? However, with the additional constraint that all 6's must be chosen. (No loops needed.)
+
+function groupSum6(start, nums, target) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target with this additional constraint: If a value in the array is chosen to be in the group, the value immediately following it in the array must not be chosen. (No loops needed.)
+
+function groupNoAdj(start, nums, int) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target with these additional constraints: all multiples of 5 in the array must be included in the group. If the value immediately following a multiple of 5 is 1, it must not be chosen. (No loops needed.)
+
+function groupSum5(start, nums, target) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to choose a group of some of the ints, such that the group sums to the given target, with this additional constraint: if there are numbers in the array that are adjacent and the identical value, they must either all be chosen, or none of them chosen. For example, with the array {1, 2, 2, 2, 5, 2}, either all three 2's in the middle must be chosen or not, all as a group. (one loop can be used to find the extent of the identical values).
+
+function groupSumClump(start, nums, target) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to divide the ints into two groups, so that the sums of the two groups are the same. Every int must be in one group or the other. Write a recursive helper method that takes whatever arguments you like, and make the initial call to your recursive helper from splitArray(). (No loops needed.)
+
+function splitArray(nums) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to divide the ints into two groups, so that the sum of one group is a multiple of 10, and the sum of the other group is odd. Every int must be in one group or the other. Write a recursive helper method that takes whatever arguments you like, and make the initial call to your recursive helper from splitOdd10(). (No loops needed.)
+
+function splitOdd10(nums) {}
+
+// ---------------------------------------------------
+
+// Given an array of ints, is it possible to divide the ints into two groups, so that the sum of the two groups is the same, with these constraints: all the values that are multiple of 5 must be in one group, and all the values that are a multiple of 3 (and not a multiple of 5) must be in the other. (No loops needed.)
+
+function split53(nums) {}
+
 module.exports = {
   factorial,
   bunnyEars,
@@ -205,5 +518,30 @@ module.exports = {
   countX,
   countHi,
   changeXY,
-  changePi, noX
+  changePi,
+  noX,
+  array6,
+  array11,
+  array220,
+  allStar,
+  pairStar,
+  endX,
+  countPairs,
+  countAbc,
+  count11,
+  stringClean,
+  countHi2,
+  parenBit,
+  nestParen,
+  strCount,
+  strCopies,
+  strDist,
+  groupSum,
+  groupSum6,
+  groupNoAdj,
+  groupSum5,
+  groupSumClump,
+  splitArray,
+  splitOdd10,
+  split53
 };
