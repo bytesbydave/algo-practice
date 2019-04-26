@@ -1073,234 +1073,244 @@ describe('groupSum', () => {
   test('expect groupSum(0, [2, 4, 8], 8) to return true', () => {
     expect(groupSum(0, [2, 4, 8], 8)).toEqual(true);
   });
-  test('expect groupSum(1, [2, 4, 8], 8) to return false', () => {
-    expect(groupSum(1, [2, 4, 8], 8)).toEqual(false);
+  test('expect groupSum(1, [2, 4, 8], 8) to return true', () => {
+    expect(groupSum(1, [2, 4, 8], 8)).toEqual(true);
   });
 
   test('expect groupSum(0, [1], 1) to return true', () => {
     expect(groupSum(0, [1], 1)).toEqual(true);
   });
 
-  test('expect groupSum(0, [9], 1) to return true', () => {
-    expect(groupSum(0, [9], 1)).toEqual(true);
+  test('expect groupSum(0, [9], 1) to return false', () => {
+    expect(groupSum(0, [9], 1)).toEqual(false);
+  });
+
+  test('expect groupSum(1, [9], 0) to return true', () => {
+    expect(groupSum(1, [9], 0)).toEqual(true);
+  });
+
+  test('expect groupSum(0, [], 0) to return true', () => {
+    expect(groupSum(0, [], 0)).toEqual(true);
   });
 });
 
-// const groupSum6 = myMethods.groupSum6;
+const groupSum6 = myMethods.groupSum6;
 
-// describe('groupSum6', () => {
-//   test('groupSum6 function exists', () => {
-//     expect(typeof groupSum6).toEqual('function');
-//   });
+describe('groupSum6', () => {
+  test('groupSum6 function exists', () => {
+    expect(typeof groupSum6).toEqual('function');
+  });
 
-//   test('expect groupSum6(0, [5, 6, 2], 8) to return true', () => {
-//     expect(groupSum6(0, [5, 6, 2], 8)).toEqual(true);
-//   });
+  test('expect groupSum6(0, [5, 6, 2], 8) to return true', () => {
+    expect(groupSum6(0, [5, 6, 2], 8)).toEqual(true);
+  });
 
-//   test('expect groupSum6(0, [5, 6, 2], 9) to return false', () => {
-//     expect(groupSum6(0, [5, 6, 2], 9)).toEqual(false);
-//   });
+  test('expect groupSum6(0, [5, 6, 2], 9) to return false', () => {
+    expect(groupSum6(0, [5, 6, 2], 9)).toEqual(false);
+  });
 
-//   test('expect groupSum6(0, [5, 6, 2], 7) to return false', () => {
-//     expect(groupSum6(0, [5, 6, 2], 7)).toEqual(false);
-//   });
+  test('expect groupSum6(0, [5, 6, 2], 7) to return false', () => {
+    expect(groupSum6(0, [5, 6, 2], 7)).toEqual(false);
+  });
 
-//   test('expect groupSum6(0, [1], 1) to return true', () => {
-//     expect(groupSum6(0, [1], 1)).toEqual(true);
-//   });
+  test('expect groupSum6(0, [1], 1) to return true', () => {
+    expect(groupSum6(0, [1], 1)).toEqual(true);
+  });
 
-//   test('expect groupSum6(0, [9], 1) to return false', () => {
-//     expect(groupSum6(0, [9], 1)).toEqual(false);
-//   });
+  test('expect groupSum6(0, [9], 1) to return false', () => {
+    expect(groupSum6(0, [9], 1)).toEqual(false);
+  });
 
-//   test('expect groupSum6(0, [], 0) to return true', () => {
-//     expect(groupSum6(0, [], 0)).toEqual(true);
-//   });
+  test('expect groupSum6(0, [], 0) to return true', () => {
+    expect(groupSum6(0, [], 0)).toEqual(true);
+  });
 
-//   test('expect groupSum6(0, [3, 2, 4, 6], 8) to return true', () => {
-//     expect(groupSum6(0, [3, 2, 4, 6], 8)).toEqual(true);
-//   });
+  test('expect groupSum6(0, [3, 2, 4, 6], 8) to return true', () => {
+    expect(groupSum6(0, [3, 2, 4, 6], 8)).toEqual(true);
+  });
 
-//   test('expect groupSum6(0, [6, 2, 4, 3], 8) to return true', () => {
-//     expect(groupSum6(0, [6, 2, 4, 3], 8)).toEqual(true);
-//   });
+  test('expect groupSum6(0, [6, 2, 4, 3], 8) to return true', () => {
+    expect(groupSum6(0, [6, 2, 4, 3], 8)).toEqual(true);
+  });
 
-//   test('expect groupSum6(0, [5, 2, 4, 6], 9) to return false', () => {
-//     expect(groupSum6(0, [5, 2, 4, 6], 9)).toEqual(false);
-//   });
+  test('expect groupSum6(0, [5, 2, 4, 6], 9) to return false', () => {
+    expect(groupSum6(0, [5, 2, 4, 6], 9)).toEqual(false);
+  });
 
-//   test('expect groupSum6(0, [6, 2, 4, 5], 9) to return false', () => {
-//     expect(groupSum6(0, [6, 2, 4, 5], 9)).toEqual(false);
-//   });
+  test('expect groupSum6(0, [6, 2, 4, 5], 9) to return false', () => {
+    expect(groupSum6(0, [6, 2, 4, 5], 9)).toEqual(false);
+  });
 
-//   test('expect groupSum6(0, [3, 2, 4, 6], 3) to return false', () => {
-//     expect(groupSum6(0, [3, 2, 4, 6], 3)).toEqual(false);
-//   });
-// });
+  test('expect groupSum6(0, [3, 2, 4, 6], 3) to return false', () => {
+    expect(groupSum6(0, [3, 2, 4, 6], 3)).toEqual(false);
+  });
+});
 
-// const groupNoAdj = myMethods.groupNoAdj;
+const groupNoAdj = myMethods.groupNoAdj;
 
-// describe('groupNoAdj', () => {
-//   test('groupNoAdj function exists', () => {
-//     expect(typeof groupNoAdj).toEqual('function');
-//   });
+describe('groupNoAdj', () => {
+  test('groupNoAdj function exists', () => {
+    expect(typeof groupNoAdj).toEqual('function');
+  });
 
-//   test('expect groupNoAdj(0, [2, 5, 10, 4], 12) to return true', () => {
-//     expect(groupNoAdj(0, [2, 5, 10, 4], 12)).toEqual(true);
-//   });
+  test('expect groupNoAdj(0, [2, 5, 10, 4], 12) to return true', () => {
+    expect(groupNoAdj(0, [2, 5, 10, 4], 12)).toEqual(true);
+  });
 
-//   test('expect groupNoAdj(0, [2, 5, 10, 4], 14) to return false', () => {
-//     expect(groupNoAdj(0, [2, 5, 10, 4], 14)).toEqual(false);
-//   });
+  test('expect groupNoAdj(0, [2, 5, 10, 4], 14) to return false', () => {
+    expect(groupNoAdj(0, [2, 5, 10, 4], 14)).toEqual(false);
+  });
 
-//   test('expect groupNoAdj(0, [2, 5, 10, 4], 7) to return false', () => {
-//     expect(groupNoAdj(0, [2, 5, 10, 4], 7)).toEqual(false);
-//   });
+  test('expect groupNoAdj(0, [2, 5, 10, 4], 7) to return false', () => {
+    expect(groupNoAdj(0, [2, 5, 10, 4], 7)).toEqual(false);
+  });
 
-//   test('expect groupNoAdj(0, [2, 5, 10, 4, 2], 7) to return true', () => {
-//     expect(groupNoAdj(0, [2, 5, 10, 4, 2], 7)).toEqual(true);
-//   });
+  test('expect groupNoAdj(0, [2, 5, 10, 4, 2], 7) to return true', () => {
+    expect(groupNoAdj(0, [2, 5, 10, 4, 2], 7)).toEqual(true);
+  });
 
-//   test('expect groupNoAdj(0, [2, 5, 10, 4], 9) to return true', () => {
-//     expect(groupNoAdj(0, [2, 5, 10, 4], 9)).toEqual(true);
-//   });
+  test('expect groupNoAdj(0, [2, 5, 10, 4], 9) to return true', () => {
+    expect(groupNoAdj(0, [2, 5, 10, 4], 9)).toEqual(true);
+  });
 
-//   test('expect groupNoAdj(0, [10, 2, 2, 3, 3], 15) to return true', () => {
-//     expect(groupNoAdj(0, [10, 2, 2, 3, 3], 15)).toEqual(true);
-//   });
+  test('expect groupNoAdj(0, [10, 2, 2, 3, 3], 15) to return true', () => {
+    expect(groupNoAdj(0, [10, 2, 2, 3, 3], 15)).toEqual(true);
+  });
 
-//   test('expect groupNoAdj(0, [10, 2, 2, 3, 3], 7) to return false', () => {
-//     expect(groupNoAdj(0, [10, 2, 2, 3, 3], 7)).toEqual(false);
-//   });
+  test('expect groupNoAdj(0, [10, 2, 2, 3, 3], 7) to return false', () => {
+    expect(groupNoAdj(0, [10, 2, 2, 3, 3], 7)).toEqual(false);
+  });
 
-//   test('expect groupNoAdj(0, [], 0) to return true', () => {
-//     expect(groupNoAdj(0, [], 0)).toEqual(true);
-//   });
+  test('expect groupNoAdj(0, [], 0) to return true', () => {
+    expect(groupNoAdj(0, [], 0)).toEqual(true);
+  });
 
-//   test('expect groupNoAdj(0, [1], 1) to return true', () => {
-//     expect(groupNoAdj(0, [1], 1)).toEqual(true);
-//   });
-// });
+  test('expect groupNoAdj(0, [1], 1) to return true', () => {
+    expect(groupNoAdj(0, [1], 1)).toEqual(true);
+  });
+});
 
-// const groupSum5 = myMethods.groupSum5;
+const groupSum5 = myMethods.groupSum5;
 
-// describe('groupSum5', () => {
-//   test('groupSum5 function exists', () => {
-//     expect(typeof groupSym5).toEqual('function');
-//   });
+describe('groupSum5', () => {
+  test('groupSum5 function exists', () => {
+    expect(typeof groupSum5).toEqual('function');
+  });
 
-//   test('expect groupSum5(0, [2, 5, 10, 4], 19) to return true', () => {
-//     expect(groupSum5(0, [2, 5, 10, 4], 19)).toEqual(true);
-//   });
+  test('expect groupSum5(0, [2, 5, 10, 4], 19) to return true', () => {
+    expect(groupSum5(0, [2, 5, 10, 4], 19)).toEqual(true);
+  });
 
-//   test('expect groupSum5(0, [2, 5, 10, 4], 17) to return true', () => {
-//     expect(groupSum5(0, [2, 5, 10, 4], 17)).toEqual(true);
-//   });
+  test('expect groupSum5(0, [2, 5, 10, 4], 17) to return true', () => {
+    expect(groupSum5(0, [2, 5, 10, 4], 17)).toEqual(true);
+  });
 
-//   test('expect groupSum5(0, [2, 5, 10, 4], 12) to return false', () => {
-//     expect(groupSum5(0, [2, 5, 10, 4], 12)).toEqual(false);
-//   });
+  test('expect groupSum5(0, [2, 5, 10, 4], 12) to return false', () => {
+    expect(groupSum5(0, [2, 5, 10, 4], 12)).toEqual(false);
+  });
 
-//   test('expect groupSum5(0, [2, 5, 4, 10], 12) to return false', () => {
-//     expect(groupSum5(0, [2, 5, 4, 10], 12)).toEqual(false);
-//   });
+  test('expect groupSum5(0, [2, 5, 4, 10], 12) to return false', () => {
+    expect(groupSum5(0, [2, 5, 4, 10], 12)).toEqual(false);
+  });
 
-//   test('expect groupSum5(0, [3, 5, 1], 4) to return false', () => {
-//     expect(groupSum5(0, [3, 5, 1], 4)).toEqual(false);
-//   });
+  test('expect groupSum5(0, [3, 5, 1], 4) to return false', () => {
+    expect(groupSum5(0, [3, 5, 1], 4)).toEqual(false);
+  });
 
-//   test('expect groupSum5(0, [3, 5, 1], 5) to return true', () => {
-//     expect(groupSum5(0, [3, 5, 1], 5)).toEqual(true);
-//   });
+  test('expect groupSum5(0, [3, 5, 1], 5) to return true', () => {
+    expect(groupSum5(0, [3, 5, 1], 5)).toEqual(true);
+  });
 
-//   test('expect groupSum5(0, [1, 3, 5], 5) to return true', () => {
-//     expect(groupSum5(0, [1, 3, 5], 5)).toEqual(true);
-//   });
+  test('expect groupSum5(0, [1, 3, 5], 5) to return true', () => {
+    expect(groupSum5(0, [1, 3, 5], 5)).toEqual(true);
+  });
 
-//   test('expect groupSum5(0, [], 0) to return true', () => {
-//     expect(groupSum5(0, [], 0)).toEqual(true);
-//   });
+  test('expect groupSum5(0, [], 0) to return true', () => {
+    expect(groupSum5(0, [], 0)).toEqual(true);
+  });
 
-//   test('expect groupSum5(0, [1], 1) to return true', () => {
-//     expect(groupSum5(0, [1], 1)).toEqual(true);
-//   });
-// });
+  test('expect groupSum5(0, [1], 1) to return true', () => {
+    expect(groupSum5(0, [1], 1)).toEqual(true);
+  });
+});
 
-// const groupSumClump = myMethods.groupSumClump;
+const groupSumClump = myMethods.groupSumClump;
 
-// describe('groupSumClump', () => {
-//   test('groupSumClump function exists', () => {
-//     expect(typeof groupSumClump).toEqual('function');
-//   });
+describe('groupSumClump', () => {
+  test('groupSumClump function exists', () => {
+    expect(typeof groupSumClump).toEqual('function');
+  });
 
-//   test('expect groupSumClump(0, [2, 4, 8], 10) to return true', () => {
-//     expect(groupSumClump(0, [2, 4, 8], 10)).toEqual(true);
-//   });
+  test('expect groupSumClump(0, [2, 4, 8], 10) to return true', () => {
+    expect(groupSumClump(0, [2, 4, 8], 10)).toEqual(true);
+  });
 
-//   test('expect groupSumClump(0, [1, 2, 4, 8, 1], 14) to return true', () => {
-//     expect(groupSumClump(0, [1, 2, 4, 8, 1], 14)).toEqual(true);
-//   });
+  test('expect groupSumClump(0, [1, 2, 4, 8, 1], 14) to return true', () => {
+    expect(groupSumClump(0, [1, 2, 4, 8, 1], 14)).toEqual(true);
+  });
 
-//   test('expect groupSumClump(0, [2, 4, 4, 8], 14) to return false', () => {
-//     expect(groupSumClump(0, [2, 4, 4, 8], 14)).toEqual(false);
-//   });
+  test('expect groupSumClump(0, [2, 4, 4, 8], 14) to return false', () => {
+    expect(groupSumClump(0, [2, 4, 4, 8], 14)).toEqual(false);
+  });
 
-//   test('expect groupSumClump(0, [8, 2, 2, 1], 9) to return true', () => {
-//     expect(groupSumClump(0, [8, 2, 2, 1], 9)).toEqual(true);
-//   });
+  test('expect groupSumClump(0, [8, 2, 2, 1], 9) to return true', () => {
+    expect(groupSumClump(0, [8, 2, 2, 1], 9)).toEqual(true);
+  });
 
-//   test('expect groupSumClump(0, [8, 2, 2, 1], 11) to return false', () => {
-//     expect(groupSumClump(0, [8, 2, 2, 1], 11)).toEqual(false);
-//   });
+  test('expect groupSumClump(0, [8, 2, 2, 1], 11) to return false', () => {
+    expect(groupSumClump(0, [8, 2, 2, 1], 11)).toEqual(false);
+  });
 
-//   test('expect groupSumClump(0, [1], 1) to return true', () => {
-//     expect(groupSumClump(0, [1], 1)).toEqual(true);
-//   });
+  test('expect groupSumClump(0, [1], 1) to return true', () => {
+    expect(groupSumClump(0, [1], 1)).toEqual(true);
+  });
 
-//   test('expect groupSumClump(0, [9], 1) to return false', () => {
-//     expect(groupSumClump(0, [9], 1)).toEqual(false);
-//   });
-// });
+  test('expect groupSumClump(0, [9], 1) to return false', () => {
+    expect(groupSumClump(0, [9], 1)).toEqual(false);
+  });
+});
 
-// const splitArray = myMethods.splitArray;
+const splitArray = myMethods.splitArray;
 
-// describe('splitArray', () => {
-//   test('splitArray returns a function', () => {
-//     expect(typeof splitArray).toEqual('function');
-//   });
+describe('splitArray', () => {
+  test('splitArray returns a function', () => {
+    expect(typeof splitArray).toEqual('function');
+  });
 
-//   test('split splitArray([2, 2]) to return true', () => {
-//     expect(splitArray([2, 2])).toEqual(true);
-//   });
+  test('split splitArray([2, 2]) to return true', () => {
+    expect(splitArray([2, 2])).toEqual(true);
+  });
 
-//   test('split splitArray([2, 3]) to return false', () => {
-//     expect(splitArray([2, 3])).toEqual(false);
-//   });
+  test('split splitArray([2, 3]) to return false', () => {
+    expect(splitArray([2, 3])).toEqual(false);
+  });
 
-//   test('split splitArray([5, 2, 3]) to return true', () => {
-//     expect(splitArray([5, 2, 3])).toEqual(true);
-//   });
+  test('split splitArray([5, 2, 3]) to return true', () => {
+    expect(splitArray([5, 2, 3])).toEqual(true);
+  });
 
-//   test('split splitArray([5, 2, 2]) to return false', () => {
-//     expect(splitArray([5, 2, 2])).toEqual(false);
-//   });
+  test('split splitArray([5, 2, 2]) to return false', () => {
+    expect(splitArray([5, 2, 2])).toEqual(false);
+  });
 
-//   test('split splitArray([1, 1, 1, 1, 1, 1]) to return true', () => {
-//     expect(splitArray([1, 1, 1, 1, 1, 1])).toEqual(true);
-//   });
+  test('split splitArray([1, 1, 1, 1, 1, 1]) to return true', () => {
+    expect(splitArray([1, 1, 1, 1, 1, 1])).toEqual(true);
+  });
 
-//   test('split splitArray([1, 1, 1, 1, 1]) to return false', () => {
-//     expect(splitArray([1, 1, 1, 1, 1])).toEqual(false);
-//   });
+  test('split splitArray([1, 1, 1, 1, 1]) to return false', () => {
+    expect(splitArray([1, 1, 1, 1, 1])).toEqual(false);
+  });
 
-//   test('split splitArray([]) to return true', () => {
-//     expect(splitArray([])).toEqual(true);
-//   });
+  test('split splitArray([]) to return true', () => {
+    expect(splitArray([])).toEqual(true);
+  });
 
-//   test('split splitArray([1]) to return false', () => {
-//     expect(splitArray([1])).toEqual(false);
-//   });
-// });
+  test('split splitArray([1]) to return false', () => {
+    expect(splitArray([1])).toEqual(false);
+  });
+});
+
+// const splitOdd10 = myMethods.splitOdd10
 
 // describe('splitOdd10', () => {
 //   test('splitOdd10 function exists', () => {
