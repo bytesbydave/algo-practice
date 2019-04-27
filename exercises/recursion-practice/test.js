@@ -1310,86 +1310,86 @@ describe('splitArray', () => {
   });
 });
 
-// const splitOdd10 = myMethods.splitOdd10
+const splitOdd10 = myMethods.splitOdd10;
 
-// describe('splitOdd10', () => {
-//   test('splitOdd10 function exists', () => {
-//     expect(typeof splitOdd10).toEqual('function');
-//   });
+describe('splitOdd10', () => {
+  test('splitOdd10 function exists', () => {
+    expect(typeof splitOdd10).toEqual('function');
+  });
 
-//   test('expect splitOdd10([5, 5, 5]) to return true', () => {
-//     expect(splitOdd10([5, 5, 5])).toEqual(true);
-//   });
+  test('expect splitOdd10([5, 5, 5]) to return true', () => {
+    expect(splitOdd10([5, 5, 5])).toEqual(true);
+  });
 
-//   test('expect splitOdd10([5, 5, 6]) to return false', () => {
-//     expect(splitOdd10([5, 5, 6])).toEqual(false);
-//   });
+  test('expect splitOdd10([5, 5, 6]) to return false', () => {
+    expect(splitOdd10([5, 5, 6])).toEqual(false);
+  });
 
-//   test('expect splitOdd10([5, 5, 6, 1]) to return true', () => {
-//     expect(splitOdd10([5, 5, 6, 1])).toEqual(true);
-//   });
+  test('expect splitOdd10([5, 5, 6, 1]) to return true', () => {
+    expect(splitOdd10([5, 5, 6, 1])).toEqual(true);
+  });
 
-//   test('expect splitOdd10([6, 5, 5, 1]) to return true', () => {
-//     expect(splitOdd10([6, 5, 5, 1])).toEqual(true);
-//   });
+  test('expect splitOdd10([6, 5, 5, 1]) to return true', () => {
+    expect(splitOdd10([6, 5, 5, 1])).toEqual(true);
+  });
 
-//   test('expect splitOdd10([6, 5, 5, 1, 10]) to return true', () => {
-//     expect(splitOdd10([6, 5, 5, 1, 10])).toEqual(true);
-//   });
+  test('expect splitOdd10([6, 5, 5, 1, 10]) to return true', () => {
+    expect(splitOdd10([6, 5, 5, 1, 10])).toEqual(true);
+  });
 
-//   test('expect splitOdd10([6, 5, 5, 5, 1]) to return false', () => {
-//     expect(splitOdd10([6, 5, 5, 5, 1])).toEqual(false);
-//   });
+  test('expect splitOdd10([6, 5, 5, 5, 1]) to return false', () => {
+    expect(splitOdd10([6, 5, 5, 5, 1])).toEqual(false);
+  });
 
-//   test('expect splitOdd10([1]) to return true', () => {
-//     expect(splitOdd10([1])).toEqual(true);
-//   });
+  test('expect splitOdd10([1]) to return true', () => {
+    expect(splitOdd10([1])).toEqual(true);
+  });
 
-//   test('expect splitOdd10([]) to return false', () => {
-//     expect(splitOdd10([])).toEqual(false);
-//   });
+  test('expect splitOdd10([]) to return false', () => {
+    expect(splitOdd10([])).toEqual(false);
+  });
 
-//   test('expect splitOdd10([10, 7, 5, 5, 2]) to return true', () => {
-//     expect(splitOdd10([10, 7, 5, 5, 2])).toEqual(true);
-//   });
-// });
+  test('expect splitOdd10([10, 7, 5, 5, 2]) to return true', () => {
+    expect(splitOdd10([10, 7, 5, 5, 2])).toEqual(true);
+  });
+});
 
-// const split53 = myMethods.split53;
+const split53 = myMethods.split53;
 
-// describe('split53', () => {
-//   test('split53 function exists', () => {
-//     expect(typeof split53).toEqual('function');
-//   });
+describe('split53', () => {
+  test('split53 function exists', () => {
+    expect(typeof split53).toEqual('function');
+  });
 
-//   test('expect split53([1, 1]) to return true', () => {
-//     expect(split53([1, 1])).toEqual(true);
-//   });
+  test('expect split53([1, 1]) to return true', () => {
+    expect(split53([1, 1])).toEqual(true);
+  });
 
-//   test('expect split53([1, 1, 1]) to return false', () => {
-//     expect(split53([1, 1, 1])).toEqual(false);
-//   });
+  test('expect split53([1, 1, 1]) to return false', () => {
+    expect(split53([1, 1, 1])).toEqual(false);
+  });
 
-//   test('expect split53([2,4,2]) to return true', () => {
-//     expect(split53([2, 4, 2])).toEqual(true);
-//   });
+  test('expect split53([2,4,2]) to return true', () => {
+    expect(split53([2, 4, 2])).toEqual(true);
+  });
 
-//   test('expect split53([2,2,2,1]) to return false', () => {
-//     expect(split53([2, 2, 2, 1])).toEqual(false);
-//   });
+  test('expect split53([2,2,2,1]) to return false', () => {
+    expect(split53([2, 2, 2, 1])).toEqual(false);
+  });
 
-//   test('expect split53([3,3,5,1]) to return true', () => {
-//     expect(split53([3, 3, 5, 1])).toEqual(true);
-//   });
+  test('expect split53([3,3,5,1]) to return true', () => {
+    expect(split53([3, 3, 5, 1])).toEqual(true);
+  });
 
-//   test('expect split53([3,5,8]) to return false', () => {
-//     expect(split53([3, 5, 8])).toEqual(false);
-//   });
+  test('expect split53([3,5,8]) to return false', () => {
+    expect(split53([3, 5, 8])).toEqual(false);
+  });
 
-//   test('expect split53([2,4,6]) to return true', () => {
-//     expect(split53([2, 4, 6])).toEqual(true);
-//   });
+  test('expect split53([2,4,6]) to return true', () => {
+    expect(split53([2, 4, 6])).toEqual(true);
+  });
 
-//   test('expect split53([3,5,6,10,3,3]) to return true', () => {
-//     expect(split53([3, 5, 6, 10, 3, 3])).toEqual(true);
-//   });
-// });
+  test('expect split53([3,5,6,10,3,3]) to return true', () => {
+    expect(split53([3, 5, 6, 10, 3, 3])).toEqual(true);
+  });
+});

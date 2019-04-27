@@ -569,20 +569,70 @@ function groupSumClump(start, nums, target) {
 // Given an array of ints, is it possible to divide the ints into two groups, so that the sums of the two groups are the same. Every int must be in one group or the other. Write a recursive helper method that takes whatever arguments you like, and make the initial call to your recursive helper from splitArray(). (No loops needed.)
 
 function splitArray(nums) {
-  
+  return splitArrayHelper(0, nums, 0, 0);
+}
+
+function splitArrayHelper(start, nums, group1, group2) {
+  if (start >= nums.length) {
+    return group1 === group2;
+  }
+  if (splitArrayHelper(start + 1, nums, group1 + nums[start], group2)) {
+    return true;
+  }
+
+  if (splitArrayHelper(start + 1, nums, group1, group2 + nums[start])) {
+    return true;
+  }
+  return false;
 }
 
 // ---------------------------------------------------
 
 // Given an array of ints, is it possible to divide the ints into two groups, so that the sum of one group is a multiple of 10, and the sum of the other group is odd. Every int must be in one group or the other. Write a recursive helper method that takes whatever arguments you like, and make the initial call to your recursive helper from splitOdd10(). (No loops needed.)
 
-function splitOdd10(nums) {}
+function splitOdd10(nums) {
+  return splitOdd10helper(0, nums, 0, 0);
+}
+
+function splitOdd10helper(start, nums, mult, odd) {
+  if (start >= nums.length) {
+    return mult % 10 === 0 && odd % 2 === 1;
+  }
+  if (splitOdd10helper(start + 1, nums, mult + nums[start], odd)) {
+    return true;
+  }
+  if (splitOdd10helper(start + 1, nums, mult, odd + nums[start])) {
+    return true;
+  }
+  return false;
+}
 
 // ---------------------------------------------------
 
 // Given an array of ints, is it possible to divide the ints into two groups, so that the sum of the two groups is the same, with these constraints: all the values that are multiple of 5 must be in one group, and all the values that are a multiple of 3 (and not a multiple of 5) must be in the other. (No loops needed.)
 
-function split53(nums) {}
+function split53(nums) {
+  return split53helper(0, nums, 0, 0);
+}
+
+function split53helper(start, nums, mult5, mult3) {
+  if (start >= nums.length) {
+    return mult5 === mult3;
+  }
+  if (nums[start] % 5 === 0) {
+    return split53helper(start + 1, nums, mult5 + nums[start], mult3);
+  }
+  if (nums[start] % 3 === 0) {
+    return split53helper(start + 1, nums, mult5, mult3 + nums[start]);
+  }
+  if (split53helper(start + 1, nums, mult5 + nums[start], mult3)) {
+    return true;
+  }
+  if (split53helper(start + 1, nums, mult5, mult3 + nums[start])) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   factorial,
